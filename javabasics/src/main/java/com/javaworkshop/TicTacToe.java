@@ -18,7 +18,7 @@ public class TicTacToe {
   char[] board = new char[10];
   char playerSign;
   char computerSign;
-  Scanner sc=new Scanner(System.in);
+ 
 
   // initialize values of boaed
   public void createBoard() {
@@ -27,18 +27,24 @@ public class TicTacToe {
     }
   }
   
-
-  public void chooseSign(){
+//
+  public void chooseSign(Scanner sc){
     System.out.println("Choose X or O: ");
-    
-    playerSign=sc.next().toCharArray()[0];
-    computerSign=(playerSign=='X')?'O':'X';
+    char sign=sc.next().toCharArray()[0];
+    if(sign!='X'||sign!='O'){
+       System.out.println("Invalid sign:Please enter either X or O ");
+    }else{
+      playerSign=sign;
+      computerSign=(playerSign=='X')?'O':'X';
+    }
   }
 
 
   public static void main(String[] args) {
+    Scanner sc=new Scanner(System.in);
     TicTacToe game = new TicTacToe();
     game.createBoard();
-    game.chooseSign();
+    game.chooseSign(sc);
+    sc.close();
   }
 }
