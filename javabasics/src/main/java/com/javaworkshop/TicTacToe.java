@@ -1,6 +1,5 @@
 package com.javaworkshop;
 
-
 /*
  * As a Player would like to
 start fresh by creating a tic
@@ -12,18 +11,18 @@ element
 
  */
 public class TicTacToe {
-  
-  char[] board=new char[10];
 
-  public TicTacToe(){
+  char[] board = new char[10];
 
-    for(int i=1;i<board.length;i++){
-      board[i]=' ';
+  // initialize values of boaed
+  public void createBoard() {
+    for (int i = 1; i < board.length; i++) {
+      board[i] = ' ';
     }
   }
+
   public static void main(String[] args) {
-    TicTacToe game=new TicTacToe();
+    TicTacToe game = new TicTacToe();
+    game.createBoard();
   }
 }
-
-
